@@ -1,4 +1,6 @@
+# This lines helps ensure that the `Gemfile` file is complete
 require 'bundler/setup'
+require 'stamp'
 
 # This class represents a todo item and its associated
 # data: name and description. There's also a "done"
@@ -8,7 +10,7 @@ class Todo
   DONE_MARKER = 'X'
   UNDONE_MARKER = ' '
 
-  attr_accessor :title, :description, :done
+  attr_accessor :title, :description, :done, :due_date
 
   def initialize(title, description='')
     @title = title
@@ -29,7 +31,9 @@ class Todo
   end
 
   def to_s
-    "[#{done? ? DONE_MARKER : UNDONE_MARKER}] #{title}"
+    result = "[#{done? ? DONE_MARKER : UNDONE_MARKER}] #{title}"
+    result += due_date.stamp(' (Due: Friday January 6)') if due_date
+    result
   end
 
   def ==(otherTodo)

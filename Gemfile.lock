@@ -10,6 +10,7 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     ruby-progressbar (1.13.0)
+    stamp (0.6.0)
 
 PLATFORMS
   arm64-darwin-21
@@ -17,6 +18,7 @@ PLATFORMS
 DEPENDENCIES
   minitest (~> 5.17)
   minitest-reporters (~> 1.6)
+  stamp (~> 0.6.0)
 
 RUBY VERSION
    ruby 3.1.0p0
